@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">P3-C safe-default Memory admission</title>
+  <desc id="desc">A candidate needs public versioned evidence, observable preconditions and deterministic replay before entering evaluation-only staging memory. Any failed check routes to human review or quarantine.</desc>
+  <style>
+    text { font-family: Arial, PingFang SC, Microsoft YaHei, sans-serif; fill: #18243a; }
+    .title { font-size: 38px; font-weight: 700; }
+    .sub { font-size: 21px; fill: #64748b; }
+    .box { fill: #fff; stroke: #cbd5e1; stroke-width: 3; }
+    .gate { fill: #eef2ff; stroke: #6366f1; stroke-width: 3; }
+    .good { fill: #ecfdf5; stroke: #10b981; stroke-width: 3; }
+    .bad { fill: #fff7ed; stroke: #f59e0b; stroke-width: 3; }
+    .label { font-size: 24px; font-weight: 700; }
+    .note { font-size: 19px; fill: #475569; }
+    .arrow { stroke: #64748b; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+    .yes { fill: #059669; font-size: 18px; font-weight: 700; }
+    .no { fill: #d97706; font-size: 18px; font-weight: 700; }
+  </style>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker></defs>
+  <rect width="1600" height="760" fill="#f8fafc"/>
+  <rect x="40" y="35" width="1520" height="690" rx="32" class="box"/>
+  <text x="90" y="110" class="title">P3-C · safe-default 的 Memory 准入路径</text>
+  <text x="90" y="150" class="sub">候选不是 Memory；缺一项外部可验证证据，就停止升级。</text>
+  <rect x="80" y="290" width="190" height="105" rx="20" class="box"/>
+  <text x="175" y="333" text-anchor="middle" class="label">候选经验</text><text x="175" y="366" text-anchor="middle" class="note">仅离线候选</text>
+  <path d="M270 342 H350" class="arrow"/>
+  <polygon points="450,260 550,342 450,424 350,342" class="gate"/>
+  <text x="450" y="334" text-anchor="middle" class="label">来源、版本、</text><text x="450" y="365" text-anchor="middle" class="label">许可完整？</text>
+  <path d="M550 342 H630" class="arrow"/><text x="580" y="325" class="yes">是</text>
+  <polygon points="730,260 830,342 730,424 630,342" class="gate"/>
+  <text x="730" y="334" text-anchor="middle" class="label">前置条件</text><text x="730" y="365" text-anchor="middle" class="label">可观测？</text>
+  <path d="M830 342 H910" class="arrow"/><text x="860" y="325" class="yes">是</text>
+  <polygon points="1010,260 1110,342 1010,424 910,342" class="gate"/>
+  <text x="1010" y="334" text-anchor="middle" class="label">确定性</text><text x="1010" y="365" text-anchor="middle" class="label">Replay 通过？</text>
+  <path d="M1110 342 H1190" class="arrow"/><text x="1140" y="325" class="yes">是</text>
+  <rect x="1190" y="290" width="285" height="105" rx="20" class="good"/>
+  <text x="1332" y="330" text-anchor="middle" class="label">staging Memory</text><text x="1332" y="363" text-anchor="middle" class="note">evaluation-only · 冻结集仍须 Replay</text>
+  <path d="M450 424 V535 H285" class="arrow"/><text x="410" y="486" class="no">否</text>
+  <path d="M730 424 V535 H285" class="arrow"/><text x="690" y="486" class="no">否</text>
+  <path d="M1010 424 V535 H1125" class="arrow"/><text x="970" y="486" class="no">否</text>
+  <rect x="80" y="535" width="300" height="105" rx="20" class="bad"/>
+  <text x="230" y="577" text-anchor="middle" class="label">human_review</text><text x="230" y="610" text-anchor="middle" class="note">默认安全回退；禁止执行</text>
+  <rect x="1125" y="535" width="300" height="105" rx="20" class="bad"/>
+  <text x="1275" y="577" text-anchor="middle" class="label">quarantine</text><text x="1275" y="610" text-anchor="middle" class="note">失败证据 + 错误分析</text>
+</svg>
