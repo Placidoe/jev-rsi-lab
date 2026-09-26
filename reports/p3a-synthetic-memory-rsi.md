@@ -6,6 +6,8 @@
 确定性虚构政策 Replay 做最终门禁；只有通过门禁的经验才能进入 staging Memory，
 并在 template-disjoint 的冻结测试集上验证。
 
+![P3-A three-model design](../assets/diagrams/p3a-three-model.svg)
+
 ## 实验配置
 
 | 项目 | 值 |
@@ -31,6 +33,8 @@ flowchart LR
 ```
 
 ## 实测结果
+
+![P3-A held-out result](../assets/diagrams/p3a-results.svg)
 
 | 指标 | Baseline | 带 staging Memory |
 | --- | ---: | ---: |

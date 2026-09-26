@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="450" viewBox="0 0 1200 450" role="img" aria-labelledby="title desc">
+  <title id="title">JEV-RSI Lab 的文档、脚本和产物关系</title><desc id="desc">Markdown 文档说明实验协议与报告，脚本生成并读取合成数据，所有结论必须链接到可读取的 metrics 文件。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker></defs>
+  <rect width="1200" height="450" rx="24" fill="#082f49"/>
+  <text x="56" y="62" fill="#f8fafc" font-size="28" font-family="system-ui" font-weight="700">仓库只保存可公开、可追溯的自有材料</text>
+  <g font-family="system-ui" text-anchor="middle"><rect x="85" y="167" width="205" height="120" rx="18" fill="#164e63" stroke="#67e8f9"/><text x="187" y="211" fill="#cffafe" font-size="21" font-weight="700">Markdown 文档</text><text x="187" y="243" fill="#a5f3fc" font-size="15">协议、数据卡、报告</text><text x="187" y="267" fill="#a5f3fc" font-size="15">不含飞书导出物</text>
+  <rect x="380" y="167" width="205" height="120" rx="18" fill="#312e81" stroke="#a5b4fc"/><text x="482" y="211" fill="#eef2ff" font-size="21" font-weight="700">实验脚本</text><text x="482" y="243" fill="#c7d2fe" font-size="15">公共数据下载</text><text x="482" y="267" fill="#c7d2fe" font-size="15">合成环境生成</text>
+  <rect x="675" y="167" width="205" height="120" rx="18" fill="#3f2b05" stroke="#fcd34d"/><text x="777" y="211" fill="#fef3c7" font-size="21" font-weight="700">合成产物</text><text x="777" y="243" fill="#fde68a" font-size="15">fixtures / trajectories</text><text x="777" y="267" fill="#fde68a" font-size="15">policy / staging Memory</text>
+  <rect x="970" y="167" width="145" height="120" rx="18" fill="#064e3b" stroke="#6ee7b7"/><text x="1042" y="211" fill="#d1fae5" font-size="21" font-weight="700">Metrics</text><text x="1042" y="243" fill="#a7f3d0" font-size="15">JSON</text><text x="1042" y="267" fill="#a7f3d0" font-size="15">可审计结论</text></g>
+  <g stroke="#67e8f9" stroke-width="4" fill="none" marker-end="url(#a)"><path d="M290 227 H370"/><path d="M585 227 H665"/><path d="M880 227 H960"/></g>
+  <text x="600" y="374" fill="#bae6fd" font-size="17" font-family="system-ui" text-anchor="middle">外部公开数据不复制入库；个人标识、内部资料、飞书文档和附件不入库。</text>
+</svg>

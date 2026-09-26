@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">P3-A 三模型 Memory-RSI 设计</title><desc id="desc">Laya、Teacher、Reviewer 在各自可见信息范围内产生候选，确定性 policy replay 决定 staging Memory 和冻结集评测。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#818cf8"/></marker></defs>
+  <rect width="1200" height="510" rx="24" fill="#0f172a"/>
+  <text x="56" y="64" fill="#f8fafc" font-size="28" font-family="system-ui" font-weight="700">P3-A：三模型并不共同决定真值</text>
+  <text x="56" y="94" fill="#cbd5e1" font-size="16" font-family="system-ui">最终边界由独立、确定性的虚构 Policy Replay 决定</text>
+  <g font-family="system-ui" text-anchor="middle"><rect x="74" y="177" width="180" height="110" rx="16" fill="#172554" stroke="#60a5fa"/><text x="164" y="217" fill="#dbeafe" font-size="20" font-weight="700">Laya</text><text x="164" y="246" fill="#93c5fd" font-size="14">只看客户文本</text><text x="164" y="269" fill="#93c5fd" font-size="14">候选 intent/action</text>
+  <rect x="340" y="177" width="180" height="110" rx="16" fill="#312e81" stroke="#a5b4fc"/><text x="430" y="217" fill="#eef2ff" font-size="20" font-weight="700">Teacher</text><text x="430" y="246" fill="#c7d2fe" font-size="14">独立应用完整状态</text><text x="430" y="269" fill="#c7d2fe" font-size="14">候选决策</text>
+  <rect x="606" y="177" width="180" height="110" rx="16" fill="#4c1d3b" stroke="#f9a8d4"/><text x="696" y="217" fill="#fce7f3" font-size="20" font-weight="700">Reviewer</text><text x="696" y="246" fill="#fbcfe8" font-size="14">不看 Teacher 输出</text><text x="696" y="269" fill="#fbcfe8" font-size="14">独立复核</text>
+  <rect x="872" y="177" width="250" height="110" rx="16" fill="#3f2b05" stroke="#fcd34d"/><text x="997" y="217" fill="#fef3c7" font-size="20" font-weight="700">Policy Replay</text><text x="997" y="246" fill="#fde68a" font-size="14">唯一确定性 oracle</text><text x="997" y="269" fill="#fde68a" font-size="14">通过 / 拒绝</text></g>
+  <g stroke="#818cf8" stroke-width="4" fill="none" marker-end="url(#arrow)"><path d="M254 232 H330"/><path d="M520 232 H596"/><path d="M786 232 H862"/></g>
+  <path d="M997 287 V357 H776" fill="none" stroke="#34d399" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M997 287 V357 H1015" fill="none" stroke="#f87171" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="584" y="355" width="192" height="91" rx="15" fill="#064e3b" stroke="#6ee7b7"/><text x="680" y="392" fill="#d1fae5" font-size="19" font-family="system-ui" text-anchor="middle" font-weight="700">staging Memory</text><text x="680" y="420" fill="#a7f3d0" font-size="14" font-family="system-ui" text-anchor="middle">仅离线评测</text>
+  <rect x="1015" y="355" width="132" height="91" rx="15" fill="#7f1d1d" stroke="#fca5a5"/><text x="1081" y="392" fill="#fee2e2" font-size="19" font-family="system-ui" text-anchor="middle" font-weight="700">Reject</text><text x="1081" y="420" fill="#fecaca" font-size="14" font-family="system-ui" text-anchor="middle">错误分析</text>
+</svg>

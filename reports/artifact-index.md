@@ -3,6 +3,8 @@
 本索引只列出本仓库自主编写的 Markdown 文档、代码与可公开的实验输出；不含飞书文档、
 飞书附件、外部论文 PDF、人工协作台账或含个人标识的文件。
 
+![自有材料与实验产物关系](../assets/diagrams/artifact-map.svg)
+
 | 实验 | 自建 Markdown | 代码 | 已提交的输出数据 |
 | --- | --- | --- | --- |
 | RSI 架构与协议 | [protocol](../docs/experiment-protocol.md)、[pipeline](../docs/rsi-pipeline.md) | — | — |

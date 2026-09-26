@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-labelledby="title desc">
+  <title id="title">JEV-RSI 的受约束经验闭环</title><desc id="desc">轨迹经过候选经验提取、独立复核和确定性 Replay 后，只有通过门禁的条目进入 staging Memory 并在冻结集评测。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#4f46e5"/></marker></defs>
+  <rect width="1200" height="460" rx="24" fill="#0b1020"/>
+  <text x="56" y="64" fill="#f8fafc" font-size="28" font-family="system-ui" font-weight="700">受约束 Memory-RSI：经验必须先被验证</text>
+  <text x="56" y="96" fill="#a5b4fc" font-size="16" font-family="system-ui">候选生成 ≠ 真值；staging Memory ≠ 生产写入</text>
+  <g font-family="system-ui" text-anchor="middle">
+    <rect x="58" y="178" width="170" height="102" rx="16" fill="#172554" stroke="#60a5fa"/><text x="143" y="220" fill="#dbeafe" font-size="19" font-weight="700">轨迹 / 公开数据</text><text x="143" y="248" fill="#93c5fd" font-size="14">任务、反馈、结果</text>
+    <rect x="295" y="178" width="170" height="102" rx="16" fill="#312e81" stroke="#a5b4fc"/><text x="380" y="220" fill="#eef2ff" font-size="19" font-weight="700">候选经验</text><text x="380" y="248" fill="#c7d2fe" font-size="14">模型提出规则</text>
+    <rect x="532" y="178" width="170" height="102" rx="16" fill="#3f1d2e" stroke="#f9a8d4"/><text x="617" y="220" fill="#fce7f3" font-size="19" font-weight="700">独立复核</text><text x="617" y="248" fill="#fbcfe8" font-size="14">弱证据，不是裁判</text>
+    <rect x="769" y="178" width="170" height="102" rx="16" fill="#3f2b05" stroke="#fcd34d"/><text x="854" y="220" fill="#fef3c7" font-size="19" font-weight="700">确定性 Replay</text><text x="854" y="248" fill="#fde68a" font-size="14">外部可验证门禁</text>
+    <rect x="1006" y="178" width="140" height="102" rx="16" fill="#064e3b" stroke="#6ee7b7"/><text x="1076" y="220" fill="#d1fae5" font-size="19" font-weight="700">staging</text><text x="1076" y="248" fill="#a7f3d0" font-size="14">Memory</text>
+  </g>
+  <g stroke="#4f46e5" stroke-width="4" fill="none" marker-end="url(#arrow)"><path d="M228 229 H285"/><path d="M465 229 H522"/><path d="M702 229 H759"/><path d="M939 229 H996"/></g>
+  <path d="M1076 281 V362 H143 V291" fill="none" stroke="#34d399" stroke-width="4" marker-end="url(#arrow)"/>
+  <rect x="408" y="340" width="385" height="74" rx="14" fill="#111827" stroke="#64748b"/>
+  <text x="600" y="371" fill="#f8fafc" font-size="18" font-family="system-ui" text-anchor="middle" font-weight="700">冻结集评测：收益、回退与风险</text>
+  <text x="600" y="397" fill="#94a3b8" font-size="14" font-family="system-ui" text-anchor="middle">每次命中 Memory 仍须重新 Replay</text>
+</svg>

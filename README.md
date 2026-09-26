@@ -20,6 +20,8 @@ flowchart LR
 核心问题不是“模型能否写出反思”，而是：被外部可验证信号约束的经验，是否能在未见样本
 上带来收益，同时不引入回退或不安全结果。
 
+![受约束 Memory-RSI 闭环](assets/diagrams/rsi-closed-loop.svg)
+
 ## 已纳入的实验
 
 | 实验 | 数据 | 目标 | 状态 |

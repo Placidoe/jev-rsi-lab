@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
+  <title id="title">P2-G：候选动作与 Replay 最终决策分离</title><desc id="desc">Laya 对 50 条合成样本给出候选动作，Replay 拒绝不满足虚构政策的候选并给出最终 policy match。</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/></marker></defs>
+  <rect width="1200" height="470" rx="24" fill="#071a2a"/>
+  <text x="56" y="62" fill="#f8fafc" font-size="28" font-family="system-ui" font-weight="700">P2-G：模型只给候选，Replay 才给最终判定</text>
+  <g font-family="system-ui" text-anchor="middle"><rect x="66" y="170" width="225" height="126" rx="18" fill="#12365b" stroke="#38bdf8"/><text x="178" y="214" fill="#e0f2fe" font-size="21" font-weight="700">50 条合成 fixtures</text><text x="178" y="246" fill="#bae6fd" font-size="15">complaint 25 / exchange 25</text><text x="178" y="270" fill="#bae6fd" font-size="15">无真实客户数据</text>
+  <rect x="414" y="170" width="180" height="126" rx="18" fill="#312e81" stroke="#a5b4fc"/><text x="504" y="214" fill="#eef2ff" font-size="21" font-weight="700">Laya candidate</text><text x="504" y="250" fill="#c7d2fe" font-size="15">23 / 50 命中</text><text x="504" y="274" fill="#c7d2fe" font-size="15">46.0%</text>
+  <rect x="716" y="170" width="190" height="126" rx="18" fill="#78350f" stroke="#fbbf24"/><text x="811" y="214" fill="#fef3c7" font-size="21" font-weight="700">Replay mock</text><text x="811" y="250" fill="#fde68a" font-size="15">确定性虚构政策</text><text x="811" y="274" fill="#fde68a" font-size="15">拒绝不合格候选</text>
+  <rect x="1028" y="170" width="120" height="126" rx="18" fill="#065f46" stroke="#6ee7b7"/><text x="1088" y="214" fill="#d1fae5" font-size="21" font-weight="700">Final</text><text x="1088" y="250" fill="#a7f3d0" font-size="15">50 / 50</text><text x="1088" y="274" fill="#a7f3d0" font-size="15">policy match</text></g>
+  <g stroke="#38bdf8" stroke-width="4" fill="none" marker-end="url(#a)"><path d="M291 233 H404"/><path d="M594 233 H706"/><path d="M906 233 H1018"/></g>
+  <rect x="325" y="363" width="550" height="54" rx="12" fill="#1f2937"/><text x="600" y="397" fill="#f8fafc" font-size="18" font-family="system-ui" text-anchor="middle">27 / 50 候选被 Replay 拒绝（54.0%） → 验证门阻止候选直接变成动作</text>
+</svg>

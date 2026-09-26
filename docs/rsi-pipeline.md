@@ -8,6 +8,8 @@
 
 Laya 在这个方案中不承担长文本生成，而是承担“在少量明确候选项中快速做 choice 或 score”的决策职责。JEV 的状态、工具、规则、风险等级和业务执行器仍是外部、可审计的系统能力。
 
+![受约束经验闭环](../assets/diagrams/rsi-closed-loop.svg)
+
 ## 2. 全局架构：在线决策与离线 RSI 如何闭环
 
 <whiteboard type="blank"></whiteboard>

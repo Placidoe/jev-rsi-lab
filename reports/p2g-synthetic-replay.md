@@ -5,6 +5,8 @@
 当轻量模型给出一个候选动作时，系统是否能把“预测”与“最终决策”分离，让确定性的
 Replay mock 拒绝不满足政策前置条件的候选？
 
+![P2-G Replay gate](../assets/diagrams/p2g-replay-gate.svg)
+
 ## 实验材料
 
 - 50 条完全虚构 fixtures：25 条 complaint、25 条 exchange；
