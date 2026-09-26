@@ -1,0 +1,168 @@
+{
+  "policy_id": "JEV_SYNTHETIC_ECOM_AFTERSALES_V1",
+  "version": "1.0.0",
+  "status": "fictional_evaluation_only",
+  "effective_at": "2026-09-25T00:00:00+08:00",
+  "currency": "CNY",
+  "scope": "Synthetic e-commerce after-sales routing, offline Replay and Memory-RSI evaluation only",
+  "prohibited_uses": [
+    "production business decisions",
+    "real refunds or exchanges",
+    "training-label authorization without qualified human review",
+    "automatic Memory promotion",
+    "evaluation of real customers"
+  ],
+  "actions": [
+    "refund",
+    "exchange",
+    "technical_support",
+    "explain_policy",
+    "ask_clarification",
+    "human_review",
+    "deny"
+  ],
+  "global_safety_rules": {
+    "missing_required_state": "ask_clarification",
+    "elevated_or_high_risk": "human_review",
+    "conflicting_evidence": "human_review",
+    "unsupported_intent": "human_review",
+    "execution_mode": "offline_only",
+    "would_execute": false
+  },
+  "rules": [
+    {
+      "rule_id": "POL-REFUND-001",
+      "intent": "refund_request",
+      "description": "Low-risk refund for an eligible cancelled or merchant-fault order.",
+      "required_state": ["order_id_present", "payment_status", "order_status", "evidence_present", "risk_level", "amount_cny"],
+      "conditions": {
+        "order_status": ["cancelled_eligible", "delivered_merchant_fault"],
+        "payment_status": ["captured", "duplicate_confirmed"],
+        "evidence_present": true,
+        "risk_level": "low",
+        "maximum_amount_cny": 200,
+        "maximum_age_days": 7
+      },
+      "action": "refund"
+    },
+    {
+      "rule_id": "POL-REFUND-002",
+      "intent": "refund_request",
+      "description": "Refunds with elevated risk, conflicting evidence, or amounts above the automatic threshold require review.",
+      "conditions": {
+        "risk_level": ["elevated", "high"],
+        "or_amount_above_cny": 200
+      },
+      "action": "human_review"
+    },
+    {
+      "rule_id": "POL-RETURN-001",
+      "intent": "return_policy",
+      "description": "A policy-information request receives an explanation and never executes a return.",
+      "required_state": [],
+      "conditions": {},
+      "action": "explain_policy"
+    },
+    {
+      "rule_id": "POL-EXCHANGE-001",
+      "intent": "exchange_request",
+      "description": "Exchange a wrong size, color, or item when evidence, inventory and the return window are valid.",
+      "required_state": ["order_id_present", "evidence_present", "inventory_available", "age_days", "risk_level"],
+      "conditions": {
+        "evidence_present": true,
+        "inventory_available": true,
+        "risk_level": "low",
+        "maximum_age_days": 15
+      },
+      "action": "exchange"
+    },
+    {
+      "rule_id": "POL-EXCHANGE-002",
+      "intent": "exchange_request",
+      "description": "Missing evidence, order identity, or inventory state must be clarified before an exchange decision.",
+      "conditions": {
+        "any_required_state_missing": true
+      },
+      "action": "ask_clarification"
+    },
+    {
+      "rule_id": "POL-PAYMENT-001",
+      "intent": "payment_issue",
+      "description": "A confirmed low-risk duplicate charge up to CNY 500 can be refunded offline in Replay.",
+      "required_state": ["order_id_present", "payment_status", "evidence_present", "risk_level", "amount_cny"],
+      "conditions": {
+        "payment_status": "duplicate_confirmed",
+        "evidence_present": true,
+        "risk_level": "low",
+        "maximum_amount_cny": 500
+      },
+      "action": "refund"
+    },
+    {
+      "rule_id": "POL-PAYMENT-002",
+      "intent": "payment_issue",
+      "description": "Pending or failed payment states are routed to technical diagnosis, not refunded.",
+      "required_state": ["order_id_present", "payment_status"],
+      "conditions": {
+        "payment_status": ["pending", "failed", "unknown_processor_state"]
+      },
+      "action": "technical_support"
+    },
+    {
+      "rule_id": "POL-VOUCHER-001",
+      "intent": "voucher_issue",
+      "description": "Invalid, expired, or out-of-scope vouchers receive a policy explanation.",
+      "required_state": ["voucher_status", "voucher_scope_match"],
+      "conditions": {
+        "voucher_status": ["expired", "invalid"],
+        "or_scope_match": false
+      },
+      "action": "explain_policy"
+    },
+    {
+      "rule_id": "POL-VOUCHER-002",
+      "intent": "voucher_issue",
+      "description": "A valid in-scope voucher rejected by the system is a technical incident.",
+      "required_state": ["voucher_status", "voucher_scope_match", "system_error_present"],
+      "conditions": {
+        "voucher_status": "valid",
+        "voucher_scope_match": true,
+        "system_error_present": true
+      },
+      "action": "technical_support"
+    },
+    {
+      "rule_id": "POL-COMPLAINT-001",
+      "intent": "complaint_handling",
+      "description": "Repeated complaints, delivered-but-not-received claims, or unresolved commitments require human review.",
+      "required_state": ["order_id_present", "complaint_count", "fulfillment_status"],
+      "conditions": {
+        "minimum_complaint_count": 2,
+        "or_fulfillment_status": "delivered_not_received"
+      },
+      "action": "human_review"
+    },
+    {
+      "rule_id": "POL-FALLBACK-001",
+      "intent": "unknown",
+      "description": "Ambiguous requests without decisive state require clarification.",
+      "required_state": [],
+      "conditions": {},
+      "action": "ask_clarification"
+    }
+  ],
+  "memory_promotion_gate": {
+    "required": [
+      "teacher_and_reviewer_independently_agree",
+      "deterministic_policy_replay_passes",
+      "business_model_semantic_intent_is_correct",
+      "policy_rule_id_is_recorded",
+      "no_missing_required_state",
+      "heldout_test_is_template_disjoint"
+    ],
+    "initial_status": "staging_only",
+    "memory_write_authorized": false,
+    "training_label_authorized": false,
+    "business_action_authorized": false
+  }
+}
