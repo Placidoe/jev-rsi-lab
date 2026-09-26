@@ -1,0 +1,63 @@
+{
+  "purpose": "P2-G fictional exchange/complaint JEV Replay prototype",
+  "evaluation_only": true,
+  "data_status": "50 fictional fixtures generated in-script; no personal or production data",
+  "runtime": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpus": [
+      "Tesla T4",
+      "Tesla T4"
+    ],
+    "laya_package_version": "0.3.20",
+    "deterministic_controls": {
+      "seed": 20260924,
+      "cudnn_benchmark": false,
+      "cudnn_deterministic": true
+    }
+  },
+  "seed": 20260924,
+  "laya_input_schema": {
+    "version": "JEV_STATE_SCHEMA_V1_MINIMAL_SEMANTIC_ROUTING",
+    "fields": [
+      "case_id",
+      "locale",
+      "customer_message",
+      "evaluation_only"
+    ]
+  },
+  "replay_schema_version": "JEV_REPLAY_FIXTURE_V1",
+  "question_sha256": "d020c823c5dd866e86b60671f710fcb99cfad1e817141049d2040014512d27c9",
+  "inference_seconds": 0.364,
+  "inference_cases_per_second": 137.3586,
+  "summary": {
+    "case_count": 50,
+    "candidate_action_match_rate": 0.46,
+    "replay_rejection_count": 27,
+    "replay_rejection_rate": 0.54,
+    "final_action_policy_match_rate": 1.0,
+    "by_domain": {
+      "complaint": {
+        "count": 25,
+        "candidate_action_match_rate": 0.6,
+        "replay_rejection_rate": 0.4,
+        "final_action_policy_match_rate": 1.0
+      },
+      "exchange": {
+        "count": 25,
+        "candidate_action_match_rate": 0.32,
+        "replay_rejection_rate": 0.68,
+        "final_action_policy_match_rate": 1.0
+      }
+    },
+    "replay_reason_counts": {
+      "candidate_matches_mock_policy": 23,
+      "exchange_policy_exception": 5,
+      "exchange_risk_or_identity": 5,
+      "missing_exchange_details": 7,
+      "missing_order_or_evidence": 10
+    }
+  },
+  "safety_boundary": "Laya is candidate-only. Replay uses fictional deterministic mocks. No output authorizes real tools, Memory writes, training labels, or business actions.",
+  "next_gate": "Replace only after review with de-identified, business-state-enriched trajectories and approved Replay policy rules."
+}

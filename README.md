@@ -26,7 +26,9 @@ flowchart LR
 | --- | --- | --- | --- |
 | Public retail semantic routing | Bitext 公开电商客服数据集，运行时下载 | 仅测语义路由，不做业务决策 | 可复现 |
 | P2-I constrained RSI | 脚本内生成的合成样本 | 验证 Replay 门控的最小闭环 | 可复现 |
+| P2-G synthetic Replay | 50 条合成 complaint / exchange fixtures | 验证候选动作与确定性 Replay 的职责分离 | 已记录 |
 | P3-A three-model Memory-RSI | 100 条完全合成、多语种样本 + 虚构版本化政策 | 评估 Replay-validated Memory 的冻结集收益 | 已记录 |
+| Banking77 prototype memory | Banking77 公开数据，运行时下载 | 受真实标签约束的原型检索实验 | 已记录 |
 
 P3-A 的实际结果是冻结集 direct-policy pass rate 从 **37.5%** 到 **40.0%**（+2.5pp，
 纠正 1 条、没有已成功样本回退）。这只证明该受控合成环境有微弱可测收益；**不代表生产安全、
@@ -60,3 +62,5 @@ python /kaggle/input/jev-rsi-lab/scripts/laya_p3a_three_model_memory_rsi.py
 
 P3-A 还需要把 `data/synthetic/p3a/p3a_synthetic_business_policy_v1.json` 作为 Kaggle Input
 提供给脚本；脚本会同时校验政策文件的唯一性与版本。
+
+实验文档与数据产物索引见 [reports/artifact-index.md](reports/artifact-index.md)。
