@@ -1,7 +1,7 @@
 # 实验文档与产物索引
 
-本索引只列出本仓库自主编写的 Markdown 文档、代码与可公开的实验输出；不含飞书文档、
-飞书附件、外部论文 PDF、人工协作台账或含个人标识的文件。
+本索引只列出本仓库自主编写的 Markdown 文档、代码与可公开的实验输出；不含外部源文档、
+协作附件、外部论文 PDF、人工协作台账或含个人标识的文件。
 
 ![自有材料与实验产物关系](../assets/diagrams/artifact-map.svg)
 
@@ -12,6 +12,7 @@
 | P2-G Synthetic Replay | [analysis](p2g-synthetic-replay.md) | [`laya_p2g_synthetic_replay.py`](../scripts/laya_p2g_synthetic_replay.py) | 50 fixtures、完整 replay trajectories、rejections、metrics JSON |
 | P3-A 三模型 Memory-RSI | [report](p3a-synthetic-memory-rsi.md) | [`laya_p3a_three_model_memory_rsi.py`](../scripts/laya_p3a_three_model_memory_rsi.py) | 100 合成案例、虚构政策、staging Memory、corrected cases、metrics JSON |
 | Public retail semantic routing | [data source](../docs/data-sources.md) | [`laya_public_retail_benchmark.py`](../scripts/laya_public_retail_benchmark.py) | 不复制上游 Bitext 数据 |
+| 原创实验图 | [`assets/diagrams/`](../assets/diagrams) | — | RSI 闭环、P2-G gate、P3-A 角色边界、P3-A 结果、产物关系图 |
 
 ## 文件位置
 

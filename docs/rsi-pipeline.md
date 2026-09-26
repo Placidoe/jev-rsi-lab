@@ -12,7 +12,7 @@ Laya 在这个方案中不承担长文本生成，而是承担“在少量明确
 
 ## 2. 全局架构：在线决策与离线 RSI 如何闭环
 
-<whiteboard type="blank"></whiteboard>
+![受约束经验闭环](../assets/diagrams/rsi-closed-loop.svg)
 
 ### 2.1 在线链路的职责
 
@@ -33,7 +33,7 @@ JEV 负责候选产生、权限、工具执行、状态一致性、观测与回�
 
 ## 3. 第一阶段 RSI：原型记忆自进化
 
-<whiteboard type="blank"></whiteboard>
+![三模型和 Replay 的职责边界](../assets/diagrams/p3a-three-model.svg)
 
 ### 3.1 为什么先改记忆，不先改权重
 
@@ -111,7 +111,7 @@ JEV 负责候选产生、权限、工具执行、状态一致性、观测与回�
 
 ## 6. 从经验层到模型层的升级路线
 
-<whiteboard type="blank"></whiteboard>
+![实验材料、脚本与可审计指标的关系](../assets/diagrams/artifact-map.svg)
 
 ### P0：静态基线
 
