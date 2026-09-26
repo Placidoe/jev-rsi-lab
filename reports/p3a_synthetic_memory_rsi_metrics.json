@@ -1,0 +1,77 @@
+{
+  "purpose": "P3-A three-model policy-gated Memory-RSI effectiveness test in a near-real synthetic e-commerce environment",
+  "evaluation_only": true,
+  "policy": {
+    "policy_id": "JEV_SYNTHETIC_ECOM_AFTERSALES_V1",
+    "version": "1.0.0",
+    "sha256": "64f0dae2e736a296399caedac127aa5b711c7b07c07c241040ab4b233671b111",
+    "status": "fictional_evaluation_only"
+  },
+  "models": {
+    "business": "Laya Router",
+    "teacher": "HuggingFaceTB/SmolLM2-1.7B-Instruct",
+    "reviewer": "HuggingFaceTB/SmolLM2-360M-Instruct"
+  },
+  "runtime": {
+    "torch": "2.10.0+cu128",
+    "cuda": "12.8",
+    "gpus": ["Tesla T4", "Tesla T4"],
+    "laya": "0.3.20",
+    "transformers": "4.48.3",
+    "huggingface_hub": "0.34.6",
+    "seed": 20260925
+  },
+  "data": {
+    "all_cases": 100,
+    "train_cases": 60,
+    "test_cases": 40,
+    "train_template_families": 30,
+    "test_template_families": 20,
+    "case_id_overlap": 0,
+    "template_family_overlap": 0,
+    "status": "fictional multilingual cases generated in-script; no real customer or business data"
+  },
+  "latency": {
+    "laya_seconds": 1.4452,
+    "teacher_seconds": 17.4182,
+    "reviewer_seconds": 7.0775,
+    "laya_cases_per_second": 69.1967
+  },
+  "model_quality": {
+    "laya_semantic_accuracy_all": 0.6,
+    "laya_action_accuracy_all": 0.34,
+    "teacher_parse_rate": 1.0,
+    "teacher_action_accuracy": 0.17,
+    "teacher_action_macro_f1": 0.0934,
+    "reviewer_parse_rate": 1.0,
+    "reviewer_action_accuracy": 0.21,
+    "reviewer_action_macro_f1": 0.1041,
+    "teacher_reviewer_exact_agreement": 0.13
+  },
+  "memory_build": {
+    "train_cases": 60,
+    "staging_memory_entries": 1,
+    "promoted_train_cases": 1,
+    "memory_write_authorized": false,
+    "training_label_authorized": false,
+    "business_action_authorized": false
+  },
+  "heldout_effect": {
+    "baseline_direct_policy_pass_rate": 0.375,
+    "rsi_direct_policy_pass_rate": 0.4,
+    "absolute_uplift": 0.025,
+    "memory_hit_rate": 0.075,
+    "baseline_unsafe_wrong_candidate_rate": 0.3,
+    "rsi_unsafe_wrong_candidate_rate": 0.3,
+    "errors_corrected": 1,
+    "successes_regressed": 0,
+    "final_unsafe_execution_count": 0
+  },
+  "decision": {
+    "memory_rsi_effective_in_this_synthetic_environment": true,
+    "production_rsi_authorized": false,
+    "model_weight_rsi_demonstrated": false,
+    "interpretation": "A positive uplift demonstrates replay-validated policy-memory reuse under intentional policy-signature overlap. It is not evidence that the models can self-certify truth or safely act in production.",
+    "next_gate": "Repeat with approved de-identified business trajectories, real policy evidence IDs, qualified human adjudication, adversarial counterexamples, and a locked untouched test set."
+  }
+}
