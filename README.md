@@ -76,3 +76,4 @@ P3-A 还需要把 `data/synthetic/p3a/p3a_synthetic_business_policy_v1.json` 作
 提供给脚本；脚本会同时校验政策文件的唯一性与版本。
 
 实验文档与数据产物索引见 [reports/artifact-index.md](reports/artifact-index.md)。
+P4 的公开复现命令、临时产物边界与环境变量见 [P4 复现说明](docs/p4-reproduction.md)。
