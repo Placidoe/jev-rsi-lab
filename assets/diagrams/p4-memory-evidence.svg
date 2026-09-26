@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1040" viewBox="0 0 1800 1040" role="img" aria-labelledby="title desc">
+  <title id="title">P4 Memory evidence chain</title>
+  <desc id="desc">Visual comparison of observational public audits, frozen raw-memory negative result, selective distilled-memory candidate result and next causal ALFWorld gate.</desc>
+  <style>
+    text { font-family: Arial, PingFang SC, Microsoft YaHei, sans-serif; fill: #172033; }
+    .title { font-size: 43px; font-weight: 700; } .sub { font-size: 23px; fill: #64748b; }
+    .section { font-size: 27px; font-weight: 700; } .metric { font-size: 34px; font-weight: 700; }
+    .body { font-size: 21px; fill: #475569; } .small { font-size: 18px; fill: #64748b; }
+    .card { fill: white; stroke: #d8e0ec; stroke-width: 3; } .obs { fill: #eff6ff; stroke: #60a5fa; stroke-width: 3; }
+    .bad { fill: #fff1f2; stroke: #fb7185; stroke-width: 3; } .candidate { fill: #ecfdf5; stroke: #34d399; stroke-width: 3; }
+    .next { fill: #fffbeb; stroke: #fbbf24; stroke-width: 3; } .arrow { stroke: #94a3b8; stroke-width: 4; fill: none; marker-end: url(#a); }
+  </style>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#94a3b8"/></marker></defs>
+  <rect width="1800" height="1040" fill="#f8fafc"/><rect x="35" y="32" width="1730" height="970" rx="32" class="card"/>
+  <text x="90" y="115" class="title">P4 · 从公开证据到可证伪的 Memory 干预</text>
+  <text x="90" y="156" class="sub">颜色表示证据强度与结论边界，不表示生产就绪度。</text>
+  <rect x="90" y="220" width="365" height="325" rx="26" class="obs"/>
+  <text x="125" y="275" class="section">P4-A · 公开日志审计</text><text x="125" y="328" class="metric" fill="#2563eb">+5.49pp</text>
+  <text x="125" y="369" class="body">164 个 HumanEval 配对</text><text x="125" y="404" class="body">纠正 10 · 回退 1</text><text x="125" y="455" class="small">用途：筛选可验证的候选经验</text><text x="125" y="488" class="small">结论：观察性，不作因果声称</text>
+  <rect x="510" y="220" width="365" height="325" rx="26" class="bad"/>
+  <text x="545" y="275" class="section">P4-B · 原始 top-3 检索</text><text x="545" y="328" class="metric" fill="#e11d48">-13.89pp</text>
+  <text x="545" y="369" class="body">冻结集：24/36 → 19/36</text><text x="545" y="404" class="body">纠正 1 · 回退 6 · 净 -5</text><text x="545" y="455" class="small">同模型、同解码、任务无重叠</text><text x="545" y="488" class="small">结论：false transfer 被证实</text>
+  <rect x="930" y="220" width="365" height="325" rx="26" class="candidate"/>
+  <text x="965" y="275" class="section">P4-C · 选择性蒸馏</text><text x="965" y="328" class="metric" fill="#059669">+2.78pp</text>
+  <text x="965" y="369" class="body">冻结集：24/36 → 25/36</text><text x="965" y="404" class="body">仅 6/36 注入 · 净 +1</text><text x="965" y="455" class="small">固定规则、冻结阈值、无回退</text><text x="965" y="488" class="small">结论：候选信号，须独立复现</text>
+  <rect x="1350" y="220" width="330" height="325" rx="26" class="obs"/>
+  <text x="1385" y="275" class="section">P4-D · 长程日志审计</text><text x="1385" y="328" class="metric" fill="#2563eb">+22 tasks</text>
+  <text x="1385" y="369" class="body">ALFWorld 第 7 轮</text><text x="1385" y="404" class="body">101/134 → 123/134</text><text x="1385" y="455" class="small">缺完整 action / reward 轨迹</text><text x="1385" y="488" class="small">结论：观察性，不作因果声称</text>
+  <path d="M455 382 H510" class="arrow"/><path d="M875 382 H930" class="arrow"/><path d="M1295 382 H1350" class="arrow"/>
+  <rect x="180" y="675" width="1440" height="200" rx="28" class="next"/>
+  <text x="900" y="735" text-anchor="middle" class="section">下一道可证伪门槛：全新冻结 ALFWorld 干预</text>
+  <text x="900" y="780" text-anchor="middle" class="body">同模型 Baseline vs 选择性蒸馏 Memory · 全量重跑 · 新种子 / 新模型</text>
+  <text x="900" y="820" text-anchor="middle" class="body">同时记录 success、steps、重复动作、恢复、false transfer、净纠正；风险不恶化才扩大复现。</text>
+  <text x="90" y="950" class="small">归档边界：仅来源钉扎、聚合指标和原创图。不上载外部任务、轨迹、逐题输出、协作附件或私有材料。</text>
+</svg>

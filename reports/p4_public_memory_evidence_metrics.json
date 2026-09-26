@@ -1,0 +1,56 @@
+{
+  "schema_version": "JEV_PUBLIC_P4_AGGREGATE_V1",
+  "source": {
+    "repository": "https://github.com/noahshinn/reflexion",
+    "commit": "218cf0ef1df84b05ce379dd4a8e47f17766733a0",
+    "license": "MIT"
+  },
+  "archive_boundary": {
+    "public_data_only": true,
+    "raw_tasks_or_trajectories_versioned": false,
+    "individual_model_outputs_versioned": false,
+    "local_paths_versioned": false
+  },
+  "p4a_observational_humaneval": {
+    "paired_tasks": 164,
+    "baseline_pass_rate": 0.859756,
+    "reflexion_pass_rate": 0.914634,
+    "absolute_delta": 0.054878,
+    "bootstrap_ci95": [0.018293, 0.097561],
+    "corrected": 10,
+    "regressed": 1,
+    "memory_build_candidates": 5,
+    "causal_claim": false
+  },
+  "p4b_frozen_humaneval": {
+    "tasks": 36,
+    "baseline_pass_rate": 0.666667,
+    "raw_top3_memory_pass_rate": 0.527778,
+    "absolute_delta": -0.138889,
+    "corrected": 1,
+    "regressed": 6,
+    "net_corrections": -5,
+    "production_memory_authorized": false
+  },
+  "p4c_selective_distilled_memory": {
+    "tasks": 36,
+    "baseline_reused_from_p4b": true,
+    "selective_memory_pass_rate": 0.694444,
+    "absolute_delta_vs_baseline": 0.027778,
+    "injected_tasks": 6,
+    "corrected": 1,
+    "regressed": 0,
+    "net_corrections": 1,
+    "independent_replication_required": true,
+    "production_memory_authorized": false
+  },
+  "p4d_observational_alfworld": {
+    "environments": 134,
+    "baseline_trial_7_successes": 101,
+    "reflexion_trial_7_successes": 123,
+    "net_additional_successes": 22,
+    "mcnemar_exact_p": 0.0000029802322387695312,
+    "complete_step_trajectories_available": false,
+    "causal_claim": false
+  }
+}
