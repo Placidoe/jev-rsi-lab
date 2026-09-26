@@ -1,0 +1,52 @@
+{
+  "schema_version": "JEV_P4E_FROZEN_ALFWORLD_AGGREGATE_V1",
+  "sources": {
+    "alfworld": {
+      "repository": "https://github.com/alfworld/alfworld",
+      "version": "0.4.2",
+      "license": "MIT"
+    },
+    "memory_evidence": {
+      "repository": "https://github.com/noahshinn/reflexion",
+      "commit": "218cf0ef1df84b05ce379dd4a8e47f17766733a0",
+      "license": "MIT"
+    }
+  },
+  "runtime": {
+    "model": "Qwen/Qwen2.5-Coder-3B-Instruct",
+    "gpu": "Tesla T4",
+    "seed": 20260927
+  },
+  "design": {
+    "public_data_only": true,
+    "frozen_games": 8,
+    "max_steps": 30,
+    "same_model_and_decoding": true,
+    "counterbalanced_arm_order": true,
+    "complete_trajectories_versioned": false
+  },
+  "baseline": {
+    "successes": 0,
+    "games": 8,
+    "success_rate": 0.0,
+    "repeated_actions": 207
+  },
+  "selective_memory": {
+    "successes": 0,
+    "games": 8,
+    "success_rate": 0.0,
+    "repeated_actions": 169
+  },
+  "effect": {
+    "absolute_success_rate_delta": 0.0,
+    "corrected": 0,
+    "regressed": 0,
+    "net_corrections": 0,
+    "repeated_action_delta": -38
+  },
+  "decision": {
+    "pilot_positive": false,
+    "production_memory_authorized": false,
+    "independent_larger_replication_required": true
+  }
+}

@@ -61,6 +61,25 @@ python3 scripts/p4d_public_alfworld_longitudinal_audit.py
 P4-D 不调用模型，也不执行 ALFWorld 动作；它将公开累计日志转换为观察性证据与确定性
 build/holdout 划分。若输出目录已存在，脚本会拒绝覆盖，避免误删此前结果。
 
+## P4-E：冻结 ALFWorld 选择性 Memory 试点
+
+P4-E 是第一个真正的公开环境干预，不是 P4-D 的观察性日志审计。先在临时运行目录安装环境与
+下载公开 ALFWorld 数据，再以 fresh subprocess 跑 pilot：
+
+```bash
+JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
+python3 scripts/p4e_kaggle_setup.py
+
+JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
+JEV_OUTPUT_DIR=results/p4e_frozen_alfworld \
+JEV_PILOT_GAMES=8 JEV_MAX_STEPS=30 \
+python3 scripts/p4e_frozen_alfworld_selective_memory.py
+```
+
+输出含完整环境轨迹、命令、模型输出与 Memory 文本，必须始终留在 `results/` 或其他被忽略的临时
+目录中。进入仓库的只能是重新撰写的聚合报告与 metrics。该脚本若发现输出目录已存在会拒绝覆盖。
+当前 8-game 试点两臂均为 0/8 成功；详见 [P4-E 报告](../reports/p4e-frozen-alfworld-pilot.md)。
+
 ## 环境变量
 
 | 变量 | 用途 |
