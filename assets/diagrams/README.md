@@ -10,3 +10,5 @@
 | `p3a-three-model.svg` | 三模型与确定性 oracle 的权限边界 |
 | `p3a-results.svg` | P3-A 冻结集收益与限制 |
 | `artifact-map.svg` | Markdown、代码、合成数据和 metrics 的关系 |
+| `p4ij-evidence-timeline.svg` | P4-E/H/I/J 证据演进与下一门槛 |
+| `p4ij-state-controller.svg` | typed state compiler、相位过滤与约束解码的原理 |

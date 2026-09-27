@@ -1,0 +1,59 @@
+{
+  "schema_version": "JEV_P4IJ_PUBLIC_AGGREGATE_METRICS_V1",
+  "experiment_family": "Public ALFWorld, Qwen2.5-7B-Instruct, paired offline evaluation",
+  "data_handling": {
+    "raw_tasks_committed": false,
+    "case_level_outputs_committed": false,
+    "full_trajectories_committed": false,
+    "public_artifact_type": "aggregate_metrics_only"
+  },
+  "candidate": "Typed JEV task-state controller plus phase-aware legal-action filtering",
+  "constant_between_arms": [
+    "model",
+    "frozen text Memory",
+    "shared public scaffold",
+    "prefix-constrained legal-command decoder",
+    "games",
+    "counterbalanced arm order"
+  ],
+  "discovery": {
+    "games": 12,
+    "old_memory_successes": 2,
+    "state_controller_successes": 11,
+    "absolute_success_rate_delta": 0.75,
+    "corrected": 9,
+    "regressed": 0,
+    "paired_exact_mcnemar_two_sided_p": 0.00390625,
+    "hidden_validation_executed": false,
+    "interface_validation": {
+      "dynamic_manipulation_steps": 520,
+      "parse_fallbacks": 0,
+      "constrained_decoder_violations": 0,
+      "controller_filtered_steps": 182,
+      "controller_singleton_steps": 76
+    }
+  },
+  "frozen_hidden_validation": {
+    "protocol": "one-shot, pre-registered, disjoint hidden split",
+    "games": 12,
+    "old_memory_successes": 4,
+    "state_controller_successes": 11,
+    "absolute_success_rate_delta": 0.5833333333333334,
+    "corrected": 7,
+    "regressed": 0,
+    "paired_exact_mcnemar_two_sided_p": 0.015625,
+    "controller_was_frozen_before_hidden_run": true,
+    "interface_validation": {
+      "dynamic_manipulation_steps": 423,
+      "parse_fallbacks": 0,
+      "constrained_decoder_violations": 0,
+      "controller_filtered_steps": 188,
+      "controller_singleton_steps": 87
+    }
+  },
+  "authorization": {
+    "production_memory_authorized": false,
+    "training_label_authorized": false,
+    "business_action_authorized": false
+  }
+}

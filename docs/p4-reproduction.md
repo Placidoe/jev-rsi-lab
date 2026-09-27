@@ -80,6 +80,35 @@ python3 scripts/p4e_frozen_alfworld_selective_memory.py
 目录中。进入仓库的只能是重新撰写的聚合报告与 metrics。该脚本若发现输出目录已存在会拒绝覆盖。
 当前 8-game 试点两臂均为 0/8 成功；详见 [P4-E 报告](../reports/p4e-frozen-alfworld-pilot.md)。
 
+## P4-F 至 P4-J：状态控制器与一次性隐藏验证
+
+P4-F 修复 fresh action-state 传播并改为 prefix-constrained legal-command decoder；P4-G 在运行时
+生成 discovery / hidden split manifest。这个 manifest 含上游公开任务标识，必须留在被忽略的
+临时结果目录。P4-I 只可使用 discovery；P4-J 只可在 P4-I 通过预设 discovery gate、且脚本哈希
+已冻结后运行一次。
+
+```bash
+# 先按 P4-E 的 setup 命令准备公开 ALFWorld 数据和 GPU 环境。
+JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
+JEV_OUTPUT_DIR=results/p4g_preregistered_discovery_alfworld_7b \
+python3 scripts/p4g_preregistered_discovery_alfworld_7b.py
+
+JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
+JEV_P4G_DIR=results/p4g_preregistered_discovery_alfworld_7b \
+JEV_OUTPUT_DIR=results/p4i_explicit_state_controller_alfworld_7b \
+python3 scripts/p4i_explicit_state_controller_alfworld_7b.py
+
+# 仅当 P4-I discovery report 的 gate 为 true 时执行；输出存在即拒绝二次运行。
+JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
+JEV_P4G_DIR=results/p4g_preregistered_discovery_alfworld_7b \
+JEV_P4I_DISCOVERY_REPORT=results/p4i_explicit_state_controller_alfworld_7b/p4f_report.json \
+JEV_OUTPUT_DIR=results/p4j_frozen_hidden_validation_alfworld_7b \
+python3 scripts/p4j_frozen_hidden_validation_alfworld_7b.py
+```
+
+P4-J 同一 hidden split 的重复执行不是独立验证。需要新 seed 或新分割时，创建新版本的预注册
+protocol，不得用已见 hidden 结果修改控制器。
+
 ## 环境变量
 
 | 变量 | 用途 |
@@ -90,5 +119,11 @@ python3 scripts/p4e_frozen_alfworld_selective_memory.py
 | `JEV_P4B_ROWS` | P4-C 读取的 P4-B 临时 baseline 行 |
 | `JEV_P4B_SCRIPT` | P4-C 导入的 P4-B 脚本路径 |
 | `JEV_ARCHIVE_BASE` | 可选的临时 zip 输出前缀 |
+| `JEV_ALFWORLD_DATA_DIR` | 公开 ALFWorld 下载后的位置 |
+| `JEV_P4F3_SCRIPT` … `JEV_P4F6_SCRIPT` | 覆盖 P4-F 依赖脚本路径；默认同一 `scripts/` 目录 |
+| `JEV_P4G_DIR` | P4-G 临时 split manifest 所在目录 |
+| `JEV_P4I_SCRIPT` | P4-J 要冻结并验证哈希的 P4-I 实现 |
+| `JEV_P4I_DISCOVERY_REPORT` | P4-J 读取的 P4-I discovery gate 报告 |
+| `JEV_FROZEN_P4I_SHA256` | 可选的 P4-I 脚本哈希覆盖；改变实现时必须显式重设并重新预注册 |
 
 无论环境变量如何设置，原始题目、逐题模型输出、Memory 文本、完整轨迹和压缩包都不应被加入 Git。

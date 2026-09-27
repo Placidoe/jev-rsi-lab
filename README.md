@@ -48,6 +48,12 @@ P4-E 将选择性 Memory 送入 8 个冻结 ALFWorld 游戏做首次因果试点
 为 0。虽然 Memory 臂较少 38 次重复动作，但在零成功率下它不是有效性证据。详见
 [P4-E 报告](reports/p4e-frozen-alfworld-pilot.md)。
 
+P4-H 排除了“把 Memory 写得更长”这一解释（discovery：2/12 对 2/12）。随后 P4-I 只增加了
+显式任务状态和按阶段的合法动作过滤，discovery 为 2/12→11/12；实现冻结后，P4-J 在一次性、
+预注册、互斥的 hidden split 得到 4/12→11/12（+58.33pp，7 纠正、0 回退，精确配对
+p=0.015625）。这是一条受限的离线环境证据，不是生产或泛化声明；见
+[P4-I/J 报告](reports/p4ij-state-controller-validation.md)。
+
 ## 数据与隐私边界
 
 - 仓库不保存 Bitext 原始数据；脚本从上游数据集运行时下载，使用前应复核其许可证与使用条款。

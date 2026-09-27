@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
+  <title id="title">Typed JEV state controller design</title>
+  <desc id="desc">The controller compiles task goals and observations into typed state, filters legal commands by phase, and uses a prefix constrained decoder.</desc>
+  <style>
+    .bg{fill:#09111f}.box{fill:#132238;stroke:#37628d;stroke-width:2}.focus{fill:#123d35;stroke:#2dd4bf;stroke-width:2}.warn{fill:#3b2d13;stroke:#fbbf24;stroke-width:2}.arrow{stroke:#7dd3fc;stroke-width:4;fill:none}.t{font-family:ui-sans-serif,system-ui,sans-serif;fill:#f1f5f9}.s{font-family:ui-sans-serif,system-ui,sans-serif;fill:#c6d4e8;font-size:18px}.h{font-family:ui-sans-serif,system-ui,sans-serif;fill:#fff;font-size:24px;font-weight:700}.m{font-family:ui-monospace,SFMono-Regular,monospace;fill:#dbeafe;font-size:16px}
+  </style>
+  <rect class="bg" width="1200" height="470" rx="22"/>
+  <text class="t" x="48" y="56" font-size="30" font-weight="700">显式状态控制器：把“经验文本”变成可检查的阶段约束</text>
+  <g transform="translate(45 120)"><rect class="box" width="220" height="190" rx="16"/><text class="h" x="22" y="42">输入</text><text class="s" x="22" y="82">任务目标</text><text class="s" x="22" y="112">当前观察</text><text class="s" x="22" y="142">动作历史</text><text class="s" x="22" y="172">当前合法命令</text></g>
+  <path class="arrow" d="M270 215 H345 l-16 -12 m16 12 l-16 12"/>
+  <g transform="translate(350 92)"><rect class="focus" width="300" height="250" rx="16"/><text class="h" x="24" y="42">typed state compiler</text><text class="m" x="24" y="82">target · destination · transform</text><text class="m" x="24" y="112">holding · placed_count</text><text class="m" x="24" y="142">lamp_used · visited_locations</text><text class="m" x="24" y="172">phase: search → transform → place</text><text class="s" x="24" y="216">不读取 hidden outcome</text></g>
+  <path class="arrow" d="M655 215 H730 l-16 -12 m16 12 l-16 12"/>
+  <g transform="translate(735 120)"><rect class="warn" width="220" height="190" rx="16"/><text class="h" x="22" y="42">phase filter</text><text class="s" x="22" y="82">保留阶段相关</text><text class="s" x="22" y="112">的合法动作</text><text class="s" x="22" y="150">188 filtered steps</text><text class="s" x="22" y="178">87 singleton steps</text></g>
+  <path class="arrow" d="M960 215 H1035 l-16 -12 m16 12 l-16 12"/>
+  <g transform="translate(1040 120)"><rect class="box" width="120" height="190" rx="16"/><text class="h" x="16" y="42">decoder</text><text class="s" x="16" y="84">prefix</text><text class="s" x="16" y="110">constrained</text><text class="s" x="16" y="154">fallback 0</text><text class="s" x="16" y="180">invalid 0</text></g>
+  <text class="s" x="48" y="405">candidate arm only adds the compiler + filter; model、Memory、scaffold、decoder、games、arm order remain controlled.</text>
+</svg>

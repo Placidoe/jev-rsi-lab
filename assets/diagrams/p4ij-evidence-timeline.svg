@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">P4-I and P4-J state-controller evidence timeline</title>
+  <desc id="desc">A four-stage evidence timeline: null pilot, text-memory null result, discovery win, and frozen hidden validation win.</desc>
+  <style>
+    .bg{fill:#0b1220}.card{fill:#131f35;stroke:#2b4267;stroke-width:2}.bad{fill:#45232d;stroke:#f87171}.good{fill:#123d35;stroke:#34d399}.line{stroke:#60a5fa;stroke-width:5}.t{font-family:ui-sans-serif,system-ui,sans-serif;fill:#e5edf9}.s{font-family:ui-sans-serif,system-ui,sans-serif;fill:#b8c7df;font-size:18px}.h{font-family:ui-sans-serif,system-ui,sans-serif;fill:#fff;font-weight:700;font-size:24px}.n{font-family:ui-monospace,SFMono-Regular,monospace;fill:#fff;font-weight:700;font-size:29px}
+  </style>
+  <rect class="bg" width="1200" height="420" rx="22"/>
+  <text class="t" x="60" y="62" font-size="30" font-weight="700">P4：从失败对照到冻结隐藏集验证</text>
+  <text class="s" x="60" y="92">所有原始任务、轨迹和逐 case 输出留在被忽略的临时 results/ 中</text>
+  <line class="line" x1="165" y1="220" x2="1030" y2="220"/>
+  <path d="M1040 220 l-20 -12 v24z" fill="#60a5fa"/>
+  <g transform="translate(45 130)">
+    <rect class="card bad" width="230" height="190" rx="16"/>
+    <text class="h" x="22" y="40">P4-E · pilot</text><text class="n" x="22" y="90">0/8 → 0/8</text>
+    <text class="s" x="22" y="126">冻结 Memory 无有效性</text><text class="s" x="22" y="154">证据：null result</text>
+  </g>
+  <g transform="translate(325 130)">
+    <rect class="card bad" width="230" height="190" rx="16"/>
+    <text class="h" x="22" y="40">P4-H · text only</text><text class="n" x="22" y="90">2/12 → 2/12</text>
+    <text class="s" x="22" y="126">更长文字 Memory 无效</text><text class="s" x="22" y="154">hidden 保持关闭</text>
+  </g>
+  <g transform="translate(605 130)">
+    <rect class="card good" width="250" height="190" rx="16"/>
+    <text class="h" x="22" y="40">P4-I · discovery</text><text class="n" x="22" y="90">2/12 → 11/12</text>
+    <text class="s" x="22" y="126">+75pp · 9 corrected · 0 regressed</text><text class="s" x="22" y="154">实现冻结，才可进入验证</text>
+  </g>
+  <g transform="translate(905 130)">
+    <rect class="card good" width="250" height="190" rx="16"/>
+    <text class="h" x="22" y="40">P4-J · hidden</text><text class="n" x="22" y="90">4/12 → 11/12</text>
+    <text class="s" x="22" y="126">+58.33pp · p=0.015625</text><text class="s" x="22" y="154">one-shot · 7 / 0</text>
+  </g>
+  <text class="s" x="60" y="370">下一门槛：≥3 seeds · 第二模型 · OOD 长程任务；生产 / 训练标签 / 业务动作仍未授权</text>
+</svg>
