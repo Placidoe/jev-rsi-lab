@@ -12,3 +12,4 @@
 | `artifact-map.svg` | Markdown、代码、合成数据和 metrics 的关系 |
 | `p4ij-evidence-timeline.svg` | P4-E/H/I/J 证据演进与下一门槛 |
 | `p4ij-state-controller.svg` | typed state compiler、相位过滤与约束解码的原理 |
+| `p4k-to-p4p-evidence.svg` | P4-K/P4-L 的复制、P4-M/N 的 staging 门禁与 P4-O/P 的拒绝结果 |

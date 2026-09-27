@@ -1,0 +1,93 @@
+{
+  "schema_version": "JEV_RSI_P4K_TO_P4P_PUBLIC_AGGREGATES_V1",
+  "scope": "Public aggregate metrics only; no upstream task text, prompts, trajectories, or per-case model outputs are redistributed.",
+  "p4k_multiseed": {
+    "runs": 3,
+    "games_per_run": 12,
+    "baseline_successes_per_run": 4,
+    "candidate_successes_per_run": 11,
+    "corrected_per_run": 7,
+    "regressed_per_run": 0,
+    "identical_prediction_hash_across_seeds": true,
+    "gate_passed": true,
+    "interpretation": "Deterministic replication in the fixed greedy setting only."
+  },
+  "p4l_second_model_disjoint_ood": {
+    "model": "mistralai/Mistral-7B-Instruct-v0.3",
+    "games": 12,
+    "prior_game_overlap": 0,
+    "baseline_successes": 5,
+    "candidate_successes": 11,
+    "corrected": 6,
+    "regressed": 0,
+    "absolute_success_rate_delta": 0.5,
+    "paired_exact_mcnemar_two_sided_p": 0.03125,
+    "parse_fallbacks": 0,
+    "constrained_decoder_violations": 0,
+    "gate_passed": true
+  },
+  "p4m_automated_failure_rule_replay": {
+    "source_replay": {
+      "games": 7,
+      "baseline_successes": 0,
+      "candidate_successes": 6,
+      "corrected": 6,
+      "regressed": 0,
+      "paired_exact_mcnemar_two_sided_p": 0.03125
+    },
+    "new_frozen_staging_replay": {
+      "games": 12,
+      "prior_game_overlap": 0,
+      "baseline_successes": 2,
+      "candidate_successes": 9,
+      "corrected": 7,
+      "regressed": 0,
+      "absolute_success_rate_delta": 0.5833333333333334,
+      "paired_exact_mcnemar_two_sided_p": 0.015625
+    },
+    "candidate_status": "staging_candidate",
+    "production_memory_authorized": false
+  },
+  "p4n_untouched_validation": {
+    "games": 24,
+    "prior_game_overlap": 0,
+    "baseline_successes": 6,
+    "candidate_successes": 20,
+    "corrected": 14,
+    "regressed": 0,
+    "absolute_success_rate_delta": 0.5833333333333334,
+    "paired_exact_mcnemar_two_sided_p": 0.0001220703125,
+    "parse_fallbacks": 0,
+    "constrained_decoder_violations": 0,
+    "candidate_status": "staging_candidate_extended_validation_passed",
+    "production_memory_authorized": false
+  },
+  "p4o_unique_object_accounting": {
+    "source_failure_replay": {
+      "games": 3,
+      "baseline_successes": 0,
+      "candidate_successes": 3,
+      "corrected": 3,
+      "regressed": 0
+    },
+    "fresh_zero_overlap_validation": {
+      "games": 5,
+      "baseline_successes": 4,
+      "candidate_successes": 4,
+      "corrected": 0,
+      "regressed": 0
+    },
+    "candidate_status": "revise_or_reject",
+    "memory_write_authorized": false
+  },
+  "p4p_cross_split_transfer": {
+    "games": 12,
+    "baseline_successes": 9,
+    "candidate_successes": 8,
+    "corrected": 0,
+    "regressed": 1,
+    "absolute_success_rate_delta": -0.08333333333333333,
+    "candidate_status": "cross_split_replication_failed",
+    "memory_write_authorized": false
+  }
+}

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="670" viewBox="0 0 1200 670" role="img" aria-labelledby="title desc">
+  <title id="title">P4-K to P4-P evidence gates</title>
+  <desc id="desc">A self-drawn summary of replication, staging, and rejected candidate results for public ALFWorld experiments.</desc>
+  <style>
+    .bg { fill: #0b1020; } .panel { fill: #121b33; stroke: #28375d; stroke-width: 2; }
+    .title { fill: #f4f7ff; font: 700 27px system-ui, sans-serif; } .sub { fill: #aab7d9; font: 15px system-ui, sans-serif; }
+    .label { fill: #dbe7ff; font: 700 18px system-ui, sans-serif; } .note { fill: #aab7d9; font: 14px system-ui, sans-serif; }
+    .small { fill: #aab7d9; font: 13px system-ui, sans-serif; } .base { fill: #64748b; } .cand { fill: #20c997; }
+    .pass { fill: #22c55e; } .reject { fill: #fb7185; } .stage { fill: #fbbf24; } .white { fill: #f4f7ff; font: 700 18px system-ui, sans-serif; }
+  </style>
+  <rect class="bg" width="1200" height="670" rx="22"/>
+  <text class="title" x="52" y="58">P4-K → P4-P：复制、候选门禁与负结果</text>
+  <text class="sub" x="52" y="86">所有柱状值为成功数 / 游戏数；绿色通过的是 offline evidence gate，不代表 production authorization。</text>
+  <g transform="translate(52 122)">
+    <rect class="panel" width="344" height="222" rx="15"/><text class="label" x="22" y="34">P4-K  固定设置多 seed</text>
+    <rect class="base" x="24" y="75" width="90" height="34" rx="5"/><rect class="cand" x="24" y="127" width="248" height="34" rx="5"/>
+    <text class="white" x="128" y="99">baseline 4/12</text><text class="white" x="255" y="151">11/12</text>
+    <circle class="pass" cx="30" cy="195" r="8"/><text class="note" x="48" y="200">3 seeds 均相同；确定性复现</text>
+  </g>
+  <g transform="translate(428 122)">
+    <rect class="panel" width="344" height="222" rx="15"/><text class="label" x="22" y="34">P4-L  第二模型 + OOD</text>
+    <rect class="base" x="24" y="75" width="113" height="34" rx="5"/><rect class="cand" x="24" y="127" width="248" height="34" rx="5"/>
+    <text class="white" x="150" y="99">old Memory 5/12</text><text class="white" x="265" y="151">11/12</text>
+    <circle class="pass" cx="30" cy="195" r="8"/><text class="note" x="48" y="200">+50pp · 6 corrected · 0 regressed</text>
+  </g>
+  <g transform="translate(804 122)">
+    <rect class="panel" width="344" height="222" rx="15"/><text class="label" x="22" y="34">P4-M  自动候选 → staging</text>
+    <rect class="base" x="24" y="75" width="45" height="34" rx="5"/><rect class="cand" x="24" y="127" width="203" height="34" rx="5"/>
+    <text class="white" x="83" y="99">old Memory 2/12</text><text class="white" x="241" y="151">9/12</text>
+    <circle class="stage" cx="30" cy="195" r="8"/><text class="note" x="48" y="200">通过 replay；仅人工复核 staging</text>
+  </g>
+  <g transform="translate(52 382)">
+    <rect class="panel" width="344" height="222" rx="15"/><text class="label" x="22" y="34">P4-N  未接触验证窗口</text>
+    <rect class="base" x="24" y="75" width="68" height="34" rx="5"/><rect class="cand" x="24" y="127" width="226" height="34" rx="5"/>
+    <text class="white" x="106" y="99">old Memory 6/24</text><text class="white" x="264" y="151">20/24</text>
+    <circle class="stage" cx="30" cy="195" r="8"/><text class="note" x="48" y="200">+58.33pp · 14 corrected · 0 regressed</text>
+  </g>
+  <g transform="translate(428 382)">
+    <rect class="panel" width="344" height="222" rx="15"/><text class="label" x="22" y="34">P4-O  identity 规则</text>
+    <rect class="base" x="24" y="75" width="203" height="34" rx="5"/><rect class="cand" x="24" y="127" width="203" height="34" rx="5"/>
+    <text class="white" x="240" y="99">4/5</text><text class="white" x="240" y="151">4/5</text>
+    <circle class="reject" cx="30" cy="195" r="8"/><text class="note" x="48" y="200">来源失败修复，但新鲜集没有改善</text>
+  </g>
+  <g transform="translate(804 382)">
+    <rect class="panel" width="344" height="222" rx="15"/><text class="label" x="22" y="34">P4-P  跨 split 迁移</text>
+    <rect class="base" x="24" y="75" width="203" height="34" rx="5"/><rect class="cand" x="24" y="127" width="180" height="34" rx="5"/>
+    <text class="white" x="240" y="99">baseline 9/12</text><text class="white" x="217" y="151">candidate 8/12</text>
+    <circle class="reject" cx="30" cy="195" r="8"/><text class="note" x="48" y="200">-8.33pp · 0 corrected · 1 regressed</text>
+  </g>
+  <text class="small" x="52" y="642">结论：系统可自动提出候选，但只有独立 replay 与未见窗口决定是否保留；P4-O/P 的失败结果与正结果同等重要。</text>
+</svg>

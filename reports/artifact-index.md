@@ -13,9 +13,9 @@
 | P3-A 三模型 Memory-RSI | [report](p3a-synthetic-memory-rsi.md) | [`laya_p3a_three_model_memory_rsi.py`](../scripts/laya_p3a_three_model_memory_rsi.py) | 100 合成案例、虚构政策、staging Memory、corrected cases、metrics JSON |
 | P3-B 私有人工审核边界审计 | [脱敏聚合报告](p3b-private-gold-boundary.md) | — | 不保存原始人工审核数据、工作簿、逐条结果或截图 |
 | P3-C safe-default 政策模板 | [可公开 Markdown 模板](../docs/p3c-safe-default-policy-template.md) | — | 原创流程图；不保存工作簿或协作附件 |
-| P4 公开证据与冻结集 Memory | [P4 报告](p4-public-memory-evidence.md)、[P4-E→P4-J 记录](p4e-to-p4j-experiment-record.md)、[P4-I/J 验证](p4ij-state-controller-validation.md)、[复现说明](../docs/p4-reproduction.md)、[后续路线图](../docs/p4-rsi-roadmap.md) | [`P4-A`](../scripts/p4a_public_reflexion_audit.py)、[`P4-B`](../scripts/p4b_frozen_humaneval_memory_transfer.py)、[`P4-C`](../scripts/p4c_selective_distilled_memory.py)、[`P4-D`](../scripts/p4d_public_alfworld_longitudinal_audit.py)、[`P4-E setup`](../scripts/p4e_kaggle_setup.py)、[`P4-E pilot`](../scripts/p4e_frozen_alfworld_selective_memory.py)、[`P4-F2`](../scripts/p4f2_guarded_alfworld_7b.py) 至 [`P4-J`](../scripts/p4j_frozen_hidden_validation_alfworld_7b.py) | 仅脱敏聚合 metrics JSON；逐题输入/输出仅在被忽略的临时 `results/` 目录中生成 |
+| P4 公开证据与冻结集 Memory | [P4 报告](p4-public-memory-evidence.md)、[P4-E→P4-J 记录](p4e-to-p4j-experiment-record.md)、[P4-I/J 验证](p4ij-state-controller-validation.md)、[P4-K→P4-P 复制与失败控制](p4k-to-p4p-replication-and-failure-controls.md)、[复现说明](../docs/p4-reproduction.md)、[后续路线图](../docs/p4-rsi-roadmap.md) | [`P4-A`](../scripts/p4a_public_reflexion_audit.py) 至 [`P4-P`](../scripts/p4p_cross_split_transfer.py) | 仅脱敏聚合 metrics JSON；逐题输入/输出仅在被忽略的临时 `results/` 目录中生成 |
 | Public retail semantic routing | [data source](../docs/data-sources.md) | [`laya_public_retail_benchmark.py`](../scripts/laya_public_retail_benchmark.py) | 不复制上游 Bitext 数据 |
-| 原创实验图 | [`assets/diagrams/`](../assets/diagrams) | — | RSI 闭环、P2-G gate、P3-A 角色边界、P3-A 结果、P3-C admission、P4 evidence、P4-E 冻结试点图、P4-I/J 证据与状态控制图 |
+| 原创实验图 | [`assets/diagrams/`](../assets/diagrams) | — | RSI 闭环、P2-G gate、P3-A 角色边界、P3-A 结果、P3-C admission、P4 evidence、P4-E 冻结试点图、P4-I/J 证据与状态控制图、P4-K→P4-P 门禁图 |
 
 ## 文件位置
 
