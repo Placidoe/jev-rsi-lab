@@ -54,6 +54,10 @@ P4-H 排除了“把 Memory 写得更长”这一解释（discovery：2/12 对 2
 p=0.015625）。这是一条受限的离线环境证据，不是生产或泛化声明；见
 [P4-I/J 报告](reports/p4ij-state-controller-validation.md)。
 
+从 P4-E 的零结果、接口修复、预注册到 P4-J hidden 验证的完整独立 Markdown 记录见
+[P4-E→P4-J 实验记录](reports/p4e-to-p4j-experiment-record.md)；后续确认门槛见
+[P4 RSI 路线图](docs/p4-rsi-roadmap.md)。
+
 ## 数据与隐私边界
 
 - 仓库不保存 Bitext 原始数据；脚本从上游数据集运行时下载，使用前应复核其许可证与使用条款。

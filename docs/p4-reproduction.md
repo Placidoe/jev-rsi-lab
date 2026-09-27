@@ -98,6 +98,12 @@ JEV_P4G_DIR=results/p4g_preregistered_discovery_alfworld_7b \
 JEV_OUTPUT_DIR=results/p4i_explicit_state_controller_alfworld_7b \
 python3 scripts/p4i_explicit_state_controller_alfworld_7b.py
 
+# P4-H 是已验证的负对照：只改变文字 Memory；输出不应用于打开 hidden。
+JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
+JEV_P4G_DIR=results/p4g_preregistered_discovery_alfworld_7b \
+JEV_OUTPUT_DIR=results/p4h_discovery_memory_evolution_alfworld_7b \
+python3 scripts/p4h_discovery_memory_evolution_alfworld_7b.py
+
 # 仅当 P4-I discovery report 的 gate 为 true 时执行；输出存在即拒绝二次运行。
 JEV_ALFWORLD_DATA_DIR=work/alfworld_data \
 JEV_P4G_DIR=results/p4g_preregistered_discovery_alfworld_7b \

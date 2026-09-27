@@ -1,0 +1,17 @@
+{
+  "schema_version": "JEV_P4E_TO_P4J_PUBLIC_AGGREGATE_METRICS_V1",
+  "data_handling": "Aggregate-only. No public task identifiers, prompts, Memory text, per-case outputs or trajectories are committed.",
+  "runs": [
+    {"stage":"P4-E","games":8,"old_successes":0,"candidate_successes":0,"corrected":0,"regressed":0,"note":"initial frozen pilot"},
+    {"stage":"P4-F2","games":8,"old_successes":0,"candidate_successes":0,"corrected":0,"regressed":0,"note":"shared loop guard"},
+    {"stage":"P4-F3","games":8,"old_successes":0,"candidate_successes":0,"corrected":0,"regressed":0,"note":"exact-command interface"},
+    {"stage":"P4-F4","games":8,"old_successes":0,"candidate_successes":0,"corrected":0,"regressed":0,"note":"shared public scaffold"},
+    {"stage":"P4-F5","games":8,"old_successes":6,"candidate_successes":8,"corrected":2,"regressed":0,"parse_fallbacks":62,"note":"fresh action-state repair"},
+    {"stage":"P4-F6","games":8,"old_successes":5,"candidate_successes":7,"corrected":2,"regressed":0,"parse_fallbacks":0,"decoder_violations":0,"note":"constrained decoder"},
+    {"stage":"P4-G","games":12,"old_successes":1,"candidate_successes":2,"corrected":1,"regressed":0,"mcnemar_p":1.0,"note":"discovery only"},
+    {"stage":"P4-H","games":12,"old_successes":2,"candidate_successes":2,"corrected":0,"regressed":0,"mcnemar_p":1.0,"note":"longer text Memory rejected"},
+    {"stage":"P4-I","games":12,"old_successes":2,"candidate_successes":11,"corrected":9,"regressed":0,"mcnemar_p":0.00390625,"note":"discovery state controller"},
+    {"stage":"P4-J","games":12,"old_successes":4,"candidate_successes":11,"corrected":7,"regressed":0,"mcnemar_p":0.015625,"note":"one-shot frozen hidden validation"}
+  ],
+  "authorization":{"production_memory":false,"training_labels":false,"business_actions":false}
+}
