@@ -1,0 +1,43 @@
+{
+  "schema_version": "JEV_P4N_PUBLIC_AGGREGATE_METRICS_V1",
+  "experiment": "P4-N frozen candidate untouched validation",
+  "source_scope": "Public ALFWorld evaluation; aggregate-only redistribution",
+  "candidate": {
+    "id": "jev-p4m-state-rules-v1",
+    "rule_count": 6,
+    "rules_changed_after_p4m": false
+  },
+  "design": {
+    "games": 24,
+    "task_types": 6,
+    "games_per_task_type": 4,
+    "prior_game_overlap": 0,
+    "selection_seed": 20261001,
+    "counterbalanced_arm_order": true,
+    "only_arm_difference": "old frozen Memory versus exact frozen P4-M candidate state rules"
+  },
+  "results": {
+    "old_memory_successes": 6,
+    "candidate_successes": 20,
+    "net_corrections": 14,
+    "regressions": 0,
+    "absolute_success_rate_delta": 0.5833333333333334,
+    "paired_exact_mcnemar_two_sided_p": 0.0001220703125
+  },
+  "interface_validation": {
+    "dynamic_manipulation_steps": 1034,
+    "parse_fallbacks": 0,
+    "constrained_decoder_violations": 0,
+    "controller_filtered_steps": 366,
+    "controller_singleton_steps": 168
+  },
+  "decision": {
+    "untouched_validation_gate_passed": true,
+    "candidate_status": "staging_candidate_extended_validation_passed",
+    "qualified_human_review_required": true,
+    "production_memory_authorized": false,
+    "training_label_authorized": false,
+    "business_action_authorized": false
+  },
+  "redistribution_boundary": "No upstream task text, prompts, per-game trajectories, model outputs, or archives are stored in this repository."
+}
