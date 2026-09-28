@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">P4-N frozen candidate untouched validation</title>
+  <desc id="desc">A 24-game zero-overlap validation compares old Memory with frozen P4-M state rules and passes only the human-review staging gate.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0f1830"/><stop offset="1" stop-color="#26366b"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".16"/></filter>
+    <style>
+      .title{font:700 32px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#fff}.sub{font:500 15px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#cbd4ee}.k{font:700 12px ui-monospace,monospace;letter-spacing:1.2px;fill:#8493bd}.h{font:700 22px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#17203e}.p{font:500 14px system-ui,-apple-system,"PingFang SC",sans-serif;fill:#536079}.n{font:700 46px ui-monospace,monospace;fill:#17203e}.ok{font:700 14px ui-monospace,monospace;fill:#10714d}.warn{font:700 14px ui-monospace,monospace;fill:#9d3d20}.small{font:500 13px ui-monospace,monospace;fill:#51617c}
+    </style>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <text class="title" x="72" y="78">P4-N · 冻结候选的第二个未接触验证窗口</text>
+  <text class="sub" x="72" y="108">公开 ALFWorld · 24 个零重叠游戏 · 规则冻结 · 同模型 / 同 decoder / counterbalanced order</text>
+  <g filter="url(#shadow)">
+    <rect x="72" y="164" width="270" height="270" rx="20" fill="#fff"/>
+    <text class="k" x="98" y="204">CONTROL ARM</text><text class="h" x="98" y="240">旧冻结 Memory</text>
+    <text class="n" x="98" y="314">6 / 24</text><text class="p" x="98" y="344">成功游戏</text>
+    <rect x="98" y="372" width="96" height="31" rx="15" fill="#ffe6dc"/><text class="warn" x="114" y="393">25.00%</text>
+    <rect x="410" y="164" width="270" height="270" rx="20" fill="#fff"/>
+    <text class="k" x="436" y="204">FROZEN CANDIDATE</text><text class="h" x="436" y="240">P4-M state rules</text>
+    <text class="n" x="436" y="314">20 / 24</text><text class="p" x="436" y="344">成功游戏</text>
+    <rect x="436" y="372" width="96" height="31" rx="15" fill="#d9f7e7"/><text class="ok" x="452" y="393">83.33%</text>
+    <path d="M342 299 H390" stroke="#c9f56b" stroke-width="4" stroke-linecap="round"/><path d="M383 289 L397 299 383 309" fill="none" stroke="#c9f56b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="748" y="164" width="460" height="270" rx="20" fill="#fff"/>
+    <text class="k" x="776" y="204">PAIRED OUTCOME</text><text class="h" x="776" y="240">预注册门槛全部满足</text>
+    <text class="n" x="776" y="306">+58.33pp</text><text class="p" x="776" y="336">绝对成功率差 · 14 个纠正 · 0 个回退</text>
+    <line x1="776" y1="360" x2="1176" y2="360" stroke="#e5e8f0"/>
+    <text class="small" x="776" y="391">exact McNemar two-sided p = 0.0001220703125</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="72" y="490" width="1136" height="154" rx="20" fill="#151e3c"/>
+    <text class="k" x="102" y="530" fill="#aab8df">WHAT THIS PASS MEANS</text>
+    <text class="h" x="102" y="572" fill="#fff">通过第二个未接触窗口 ≠ 自动上线</text>
+    <text class="sub" x="102" y="604">候选保留在 qualified human review 的 staging 队列；生产 Memory、训练标签和业务动作授权均保持 false。</text>
+    <rect x="938" y="536" width="222" height="70" rx="12" fill="#d9f7e7"/>
+    <text class="ok" x="961" y="565">STAGING GATE</text><text class="h" x="961" y="589" fill="#134b38">PASSED</text>
+  </g>
+</svg>
